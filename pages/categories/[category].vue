@@ -1,125 +1,106 @@
 <template>
-  <div class="min-h-screen bg-gray-100">
+  <div class="bg-gray-100 min-h-screen py-8">
     <!-- Header -->
-    <header class="bg-black text-white py-6">
-      <div class="container mx-auto">
-        <h1 class="text-4xl font-bold">{{ category.name }}</h1>
-        <p class="text-lg mt-2">{{ category.description }}</p>
+    <header class="bg-blue-600 text-white py-4">
+      <div class="container mx-auto text-center">
+        <h1 class="text-4xl font-bold">{{ categoryTitle }}</h1>
+        <p class="text-lg mt-2">Descubre las mejores opciones para ti</p>
       </div>
     </header>
 
-    <!-- Perfiles -->
-    <section class="py-12">
-      <div class="container mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-8">
-          Descubre nuestros perfiles
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div
-            v-for="profile in category.profiles"
-            :key="profile.id"
-            class="bg-white shadow-lg rounded-lg p-6 text-center"
-          >
-            <div class="mb-4">
-              <img
-                :src="profile.image"
-                :alt="profile.name"
-                class="w-24 h-24 mx-auto rounded-full object-cover"
-              />
-            </div>
-            <h3 class="text-xl font-bold mb-2">{{ profile.name }}</h3>
-            <p class="text-gray-700">{{ profile.description }}</p>
+    <!-- Grid de Perfiles -->
+    <section class="container mx-auto py-8 px-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <!-- Cada perfil redirige a su página individual -->
+        <NuxtLink
+          v-for="profile in profiles"
+          :key="profile.id"
+          :to="`/profiles/${profile.id}`"
+          class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:-translate-y-1"
+        >
+          <!-- Imagen -->
+          <img
+            :src="profile.image"
+            :alt="profile.name"
+            class="w-full h-48 object-cover"
+          />
+
+          <!-- Detalles del perfil -->
+          <div class="p-4 text-center">
+            <h2 class="text-xl font-bold mb-2">{{ profile.name }}</h2>
+            <p class="text-gray-700 text-sm mb-2">{{ profile.description }}</p>
+            <span class="inline-block bg-blue-500 text-white py-2 px-4 rounded">
+              Ver Perfil
+            </span>
           </div>
-        </div>
+        </NuxtLink>
       </div>
     </section>
   </div>
 </template>
 
 <script setup>
-import { useRoute } from 'vue-router';
+import { useRoute } from "vue-router";
 
-// Datos hardcodeados
-const categories = {
-  women: {
-    name: 'Mujeres',
-    description: 'Compañeras exclusivas para cada momento especial.',
-    profiles: [
-      {
-        id: 1,
-        name: 'María',
-        description: 'Sofisticada y encantadora.',
-        image: '/images/profile1.jpg',
-      },
-      {
-        id: 2,
-        name: 'Lucía',
-        description: 'Atractiva y elegante.',
-        image: '/images/profile2.jpg',
-      },
-      {
-        id: 3,
-        name: 'Carla',
-        description: 'Amigable y apasionada.',
-        image: '/images/profile3.jpg',
-      },
-    ],
-  },
-  men: {
-    name: 'Hombres',
-    description: 'Acompañantes masculinos de clase mundial.',
-    profiles: [
-      {
-        id: 1,
-        name: 'Carlos',
-        description: 'Caballero encantador.',
-        image: '/images/profile4.jpg',
-      },
-      {
-        id: 2,
-        name: 'Julián',
-        description: 'Divertido y sofisticado.',
-        image: '/images/profile5.jpg',
-      },
-      {
-        id: 3,
-        name: 'David',
-        description: 'Apasionado y carismático.',
-        image: '/images/profile6.jpg',
-      },
-    ],
-  },
-  trans: {
-    name: 'Trans',
-    description: 'Experiencias únicas y personalizadas.',
-    profiles: [
-      {
-        id: 1,
-        name: 'Sofía',
-        description: 'Auténtica y empática.',
-        image: '/images/profile7.jpg',
-      },
-      {
-        id: 2,
-        name: 'Valentina',
-        description: 'Carismática y elegante.',
-        image: '/images/profile8.jpg',
-      },
-      {
-        id: 3,
-        name: 'Camila',
-        description: 'Enérgica y amigable.',
-        image: '/images/profile9.jpg',
-      },
-    ],
-  },
-};
-
-// Ruta actual
+// Obtener parámetros de la ruta
 const route = useRoute();
-const category = categories[route.params.category] || {
-  name: 'Categoría no encontrada',
-  description: '',
-  profiles: [],
+const category = route.params.category;
+
+// Títulos dinámicos
+const categoryTitles = {
+  women: "Acompañantes Mujeres",
+  men: "Acompañantes Hombres",
+  trans: "Acompañantes Trans",
 };
+const categoryTitle = categoryTitles[category] || "Categoría no encontrada";
+
+// Datos hardcodeados para perfiles
+const profiles = [
+  {
+    id: 1,
+    name: "Jessica",
+    description: "Una morocha encantadora con mucha energía.",
+    phone: "5493512337746",
+    image: "https://via.placeholder.com/300x200?text=Jessica",
+  },
+  {
+    id: 2,
+    name: "Salome",
+    description: "Momentos únicos con masajes descontracturantes.",
+    phone: "5493512483317",
+    image: "https://via.placeholder.com/300x200?text=Salome",
+  },
+  {
+    id: 3,
+    name: "Fiamma",
+    description: "Profesional y real, placer garantizado.",
+    phone: "5493515731825",
+    image: "https://via.placeholder.com/300x200?text=Fiamma",
+  },
+  {
+    id: 4,
+    name: "Florencia",
+    description: "Experiencia especial para disfrutar al máximo.",
+    phone: "5493517611007",
+    image: "https://via.placeholder.com/300x200?text=Florencia",
+  },
+  {
+    id: 5,
+    name: "Alegra",
+    description: "Sensual, divertida, y siempre dispuesta.",
+    phone: "5493516370539",
+    image: "https://via.placeholder.com/300x200?text=Alegra",
+  },
+  {
+    id: 6,
+    name: "Eli Trans",
+    description: "Últimos días en Córdoba, no te lo pierdas.",
+    phone: "5493513124078",
+    image: "https://via.placeholder.com/300x200?text=Eli+Trans",
+  },
+];
 </script>
+
+<style>
+/* Agrega personalizaciones si las necesitas */
+</style>
