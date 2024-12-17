@@ -82,11 +82,11 @@ const exitPage = () => {
 
 // Categorías Hardcodeadas
 const categories = [
-  { id: 1, name: "Mujeres", link: "/escorts?category=women", image: "https://via.placeholder.com/150x150?text=Mujeres" },
-  { id: 2, name: "Maduras", link: "/escorts?category=maduras", image: "https://via.placeholder.com/150x150?text=Maduras" },
-  { id: 3, name: "Masajes", link: "/escorts?category=masajes", image: "https://via.placeholder.com/150x150?text=Masajes" },
-  { id: 4, name: "Hombres", link: "/escorts?category=men", image: "https://via.placeholder.com/150x150?text=Hombres" },
-  { id: 5, name: "Trans", link: "/escorts?category=trans", image: "https://via.placeholder.com/150x150?text=Trans" },
+  { id: 1, name: "Mujeres", link: "/categories/women", image: "https://via.placeholder.com/150x150?text=Mujeres" },
+  { id: 2, name: "Maduras", link: "/categories/maduras", image: "https://via.placeholder.com/150x150?text=Maduras" },
+  { id: 3, name: "Masajes", link: "/categories/masajes", image: "https://via.placeholder.com/150x150?text=Masajes" },
+  { id: 4, name: "Hombres", link: "/categories/men", image: "https://via.placeholder.com/150x150?text=Hombres" },
+  { id: 5, name: "Trans", link: "/categories/trans", image: "https://via.placeholder.com/150x150?text=Trans" },
 ];
 </script>
 

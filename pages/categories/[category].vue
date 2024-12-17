@@ -13,7 +13,7 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         <!-- Cada perfil redirige a su página individual -->
         <NuxtLink
-          v-for="profile in profiles"
+          v-for="profile in filteredProfiles"
           :key="profile.id"
           :to="`/profiles/${profile.id}`"
           class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition transform hover:-translate-y-1"
@@ -51,56 +51,98 @@ const categoryTitles = {
   women: "Acompañantes Mujeres",
   men: "Acompañantes Hombres",
   trans: "Acompañantes Trans",
+  maduras: "Acompañantes Maduras",
+  masajes: "Masajistas Especializadas",
 };
 const categoryTitle = categoryTitles[category] || "Categoría no encontrada";
 
 // Datos hardcodeados para perfiles
 const profiles = [
+  // Categoría Women
   {
     id: 1,
+    category: "women",
     name: "Jessica",
     description: "Una morocha encantadora con mucha energía.",
-    phone: "5493512337746",
     image: "https://via.placeholder.com/300x200?text=Jessica",
   },
   {
     id: 2,
+    category: "women",
     name: "Salome",
     description: "Momentos únicos con masajes descontracturantes.",
-    phone: "5493512483317",
     image: "https://via.placeholder.com/300x200?text=Salome",
   },
+
+  // Categoría Men
   {
     id: 3,
-    name: "Fiamma",
-    description: "Profesional y real, placer garantizado.",
-    phone: "5493515731825",
-    image: "https://via.placeholder.com/300x200?text=Fiamma",
+    category: "men",
+    name: "Carlos",
+    description: "Un caballero sofisticado y encantador.",
+    image: "https://via.placeholder.com/300x200?text=Carlos",
   },
   {
     id: 4,
-    name: "Florencia",
-    description: "Experiencia especial para disfrutar al máximo.",
-    phone: "5493517611007",
-    image: "https://via.placeholder.com/300x200?text=Florencia",
+    category: "men",
+    name: "Julián",
+    description: "Divertido, elegante y apasionado.",
+    image: "https://via.placeholder.com/300x200?text=Julian",
   },
+
+  // Categoría Trans
   {
     id: 5,
-    name: "Alegra",
-    description: "Sensual, divertida, y siempre dispuesta.",
-    phone: "5493516370539",
-    image: "https://via.placeholder.com/300x200?text=Alegra",
+    category: "trans",
+    name: "Eli Trans",
+    description: "Últimos días en Córdoba, no te lo pierdas.",
+    image: "https://via.placeholder.com/300x200?text=Eli+Trans",
   },
   {
     id: 6,
-    name: "Eli Trans",
-    description: "Últimos días en Córdoba, no te lo pierdas.",
-    phone: "5493513124078",
-    image: "https://via.placeholder.com/300x200?text=Eli+Trans",
+    category: "trans",
+    name: "Sofía",
+    description: "Auténtica y empática, te encantará.",
+    image: "https://via.placeholder.com/300x200?text=Sofia",
+  },
+
+  // Categoría Maduras
+  {
+    id: 7,
+    category: "maduras",
+    name: "Laura",
+    description: "Madura y experimentada, una experiencia única.",
+    image: "https://via.placeholder.com/300x200?text=Laura",
+  },
+  {
+    id: 8,
+    category: "maduras",
+    name: "Carla",
+    description: "Elegancia y clase en cada encuentro.",
+    image: "https://via.placeholder.com/300x200?text=Carla",
+  },
+
+  // Categoría Masajes
+  {
+    id: 9,
+    category: "masajes",
+    name: "Luna",
+    description: "Masajes relajantes y descontracturantes.",
+    image: "https://via.placeholder.com/300x200?text=Luna",
+  },
+  {
+    id: 10,
+    category: "masajes",
+    name: "Paz",
+    description: "Experta en masajes tantricos y lingam.",
+    image: "https://via.placeholder.com/300x200?text=Paz",
   },
 ];
+
+// Filtrar perfiles según la categoría seleccionada
+const filteredProfiles = profiles.filter((profile) => profile.category === category);
 </script>
 
-<style>
+<style scoped>
 /* Agrega personalizaciones si las necesitas */
 </style>
