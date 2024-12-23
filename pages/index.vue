@@ -36,6 +36,23 @@
         </p>
       </header>
 
+      <!-- DESTACAD@S -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold mb-6 text-center">🔥 DESTACAD@S 🔥</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <NuxtLink
+            v-for="featured in featuredProfiles"
+            :key="featured.id"
+            :to="featured.link"
+            class="bg-gradient-to-br from-purple-600 to-pink-500 text-white p-4 rounded-lg shadow-lg text-center hover:opacity-90 transition"
+          >
+            <img :src="featured.image" :alt="featured.name" class="w-32 h-32 mx-auto object-cover rounded-full mb-2 border-4 border-white" />
+            <h3 class="text-lg font-bold">{{ featured.name }}</h3>
+            <p class="text-sm">{{ featured.category }}</p>
+          </NuxtLink>
+        </div>
+      </section>
+
       <!-- Categorías -->
       <section class="mb-12">
         <h2 class="text-3xl font-bold mb-6 text-center">Elegí tu Categoría</h2>
@@ -44,9 +61,8 @@
             v-for="category in categories"
             :key="category.id"
             :to="category.link"
-            class="bg-white text-gray-800 p-4 rounded-lg shadow-lg text-center hover:bg-gray-200 transition"
+            class="bg-purple-500 hover:bg-purple-600 text-white py-4 rounded-lg shadow-lg text-center transition"
           >
-            <img :src="category.image" :alt="category.name" class="w-32 h-32 mx-auto object-cover rounded-full mb-2" />
             <h3 class="text-lg font-bold">{{ category.name }}</h3>
           </NuxtLink>
         </div>
@@ -82,11 +98,20 @@ const exitPage = () => {
 
 // Categorías Hardcodeadas
 const categories = [
-  { id: 1, name: "Mujeres", link: "/categories/women", image: "https://via.placeholder.com/150x150?text=Mujeres" },
-  { id: 2, name: "Maduras", link: "/categories/maduras", image: "https://via.placeholder.com/150x150?text=Maduras" },
-  { id: 3, name: "Masajes", link: "/categories/masajes", image: "https://via.placeholder.com/150x150?text=Masajes" },
-  { id: 4, name: "Hombres", link: "/categories/men", image: "https://via.placeholder.com/150x150?text=Hombres" },
-  { id: 5, name: "Trans", link: "/categories/trans", image: "https://via.placeholder.com/150x150?text=Trans" },
+  { id: 1, name: "Mujeres", link: "/categories/women" },
+  { id: 2, name: "Maduras", link: "/categories/maduras" },
+  { id: 3, name: "Masajes", link: "/categories/masajes" },
+  { id: 4, name: "Hombres", link: "/categories/men" },
+  { id: 5, name: "Traviesas", link: "/categories/trans" },
+  { id: 6, name: "Parejas", link: "/categories/parejas" },
+];
+
+// Perfiles DESTACADOS
+const featuredProfiles = [
+  { id: 1, name: "Jessica", category: "Mujeres", link: "/categories/women/jessica", image: "https://via.placeholder.com/150x150?text=Jessica" },
+  { id: 2, name: "Carlos", category: "Hombres", link: "/categories/men/carlos", image: "https://via.placeholder.com/150x150?text=Carlos" },
+  { id: 3, name: "Luna", category: "Masajes", link: "/categories/masajes/luna", image: "https://via.placeholder.com/150x150?text=Luna" },
+  { id: 4, name: "Eli Trans", category: "Trans", link: "/categories/trans/eli", image: "https://via.placeholder.com/150x150?text=Eli+Trans" },
 ];
 </script>
 
