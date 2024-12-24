@@ -3,8 +3,8 @@
     <!-- Advertencia de Edad -->
     <section v-if="!accepted" class="fixed inset-0 flex flex-col items-center justify-center bg-black bg-opacity-90 text-center p-6">
       <div class="bg-gray-800 p-8 rounded-lg shadow-lg max-w-lg">
-        <img src="" alt="Tentaciones Traslasierra" class="w-48 mx-auto mb-4" />
-        <h1 class="text-3xl font-bold mb-4">Bienvenido a Tentaciones Traslasierra</h1>
+        <img src="" alt="Traslasierra Tentaciones" class="w-48 mx-auto mb-4" />
+        <h1 class="text-3xl font-bold mb-4">Bienvenido a Traslasierra Tentaciones</h1>
         <p class="mb-6">
           Esta plataforma está destinada únicamente para personas mayores de 18 años. Si eres menor, por favor **SAL** de esta página.
         </p>
@@ -30,7 +30,7 @@
       <!-- Encabezado -->
       <header class="text-center mb-12">
         <img src="" alt="Tentaciones Traslasierra" class="w-48 mx-auto mb-4" />
-        <h1 class="text-4xl font-bold">Tentaciones Traslasierra</h1>
+        <h1 class="text-4xl font-bold">Traslasierra Tentaciones</h1>
         <p class="text-lg mt-4">
           La mejor plataforma online para descubrir, conectar y disfrutar con personas exclusivas. Eventos, encuentros, contenido digital y mucho más.
         </p>
@@ -70,7 +70,7 @@
 
       <!-- Beneficios -->
       <section class="bg-gray-800 p-6 rounded-lg shadow-lg text-center">
-        <h2 class="text-2xl font-bold mb-4">¿Por qué elegir Tentaciones Traslasierra?</h2>
+        <h2 class="text-2xl font-bold mb-4">¿Por qué elegir Traslasierra Tentaciones?</h2>
         <ul class="space-y-3">
           <li>🌟 Privacidad y anonimato garantizados.</li>
           <li>🔥 Encuentra acompañantes para todos los gustos.</li>

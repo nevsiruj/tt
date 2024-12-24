@@ -3,12 +3,12 @@
     <div class="container mx-auto flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
       <!-- Información de la Plataforma -->
       <div class="text-center md:text-left">
-        <h2 class="text-xl font-bold">Tentaciones Traslasierra</h2>
+        <h2 class="text-xl font-bold">Traslasierra Tentaciones</h2>
         <p class="text-sm text-gray-400">
           Conecta, descubre y disfruta con personas exclusivas. Privacidad y profesionalismo garantizados.
         </p>
         <p class="text-xs text-gray-500 mt-2">
-          &copy; {{ new Date().getFullYear() }} Tentaciones Traslasierra. Todos los derechos reservados.
+          &copy; {{ new Date().getFullYear() }} Traslasierra Tentaciones. Todos los derechos reservados.
         </p>
       </div>
 
