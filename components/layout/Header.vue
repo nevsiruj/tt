@@ -3,7 +3,7 @@
     <!-- Navegación -->
     <nav class="flex items-center space-x-6">
       <NuxtLink to="/" class="hover:text-purple-400">🏠 Home</NuxtLink>
-      <NuxtLink to="/anunciar" class="hover:text-purple-400">ℹ️ Anunciar</NuxtLink>
+      <NuxtLink to="https://t.me/gritfyn" class="hover:text-purple-400" target="_blank">ℹ️ Anunciar</NuxtLink>
     </nav>
 
     <!-- Servicios -->
