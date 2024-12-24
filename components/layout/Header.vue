@@ -1,9 +1,14 @@
 <template>
-  <header class="p-4 bg-gray-800 text-white flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">
+  <header
+    class="p-4 bg-gray-800 text-white flex flex-col md:flex-row md:items-center md:justify-between space-y-4 md:space-y-0">
     <!-- Navegación -->
     <nav class="flex items-center space-x-6">
       <NuxtLink to="/" class="hover:text-purple-400">🏠 Home</NuxtLink>
-      <NuxtLink to="https://t.me/gritfyn" class="hover:text-purple-400" target="_blank">ℹ️ Anunciar</NuxtLink>
+      <NuxtLink to="https://t.me/gritfyn"
+        class="hover:bg-purple-600 text-white bg-purple-500 py-2 px-4 rounded-lg transition duration-300"
+        target="_blank" rel="noopener noreferrer">
+        ℹ️ Anunciar
+      </NuxtLink>
     </nav>
 
     <!-- Servicios -->
@@ -29,18 +34,12 @@
     <!-- Buscador Rápido -->
     <div class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4">
       <!-- Buscar por Usuario -->
-      <input
-        type="text"
-        v-model="searchQuery"
-        placeholder="Buscar por usuario..."
-        class="p-2 w-full sm:w-auto rounded bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring focus:ring-purple-500"
-      />
+      <input type="text" v-model="searchQuery" placeholder="Buscar por usuario..."
+        class="p-2 w-full sm:w-auto rounded bg-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring focus:ring-purple-500" />
 
       <!-- Selección de Zonas -->
-      <select
-        v-model="selectedZone"
-        class="p-2 w-full sm:w-auto rounded bg-gray-700 text-white focus:outline-none focus:ring focus:ring-purple-500"
-      >
+      <select v-model="selectedZone"
+        class="p-2 w-full sm:w-auto rounded bg-gray-700 text-white focus:outline-none focus:ring focus:ring-purple-500">
         <option value="" disabled selected>Seleccionar zona...</option>
         <option v-for="zone in zones" :key="zone" :value="zone">
           {{ zone }}
@@ -48,10 +47,7 @@
       </select>
 
       <!-- Botón de Búsqueda -->
-      <button
-        @click="search"
-        class="bg-purple-500 hover:bg-purple-600 text-white py-2 px-4 rounded transition"
-      >
+      <button @click="search" class="bg-purple-500 hover:bg-purple-600 text-white py-2 px-4 rounded transition">
         🔍 Buscar
       </button>
     </div>
